@@ -14,8 +14,12 @@ const cases = [
     url: `file:///${__dirname}/fixtures/1000-elements/asteriod.html`
   },
   {
-    name: '1000 elements with extra > * + *',
+    name: '1000 elements with 2 > * + *',
     url: `file:///${__dirname}/fixtures/1000-elements/two-asteriod.html`
+  },
+  {
+    name: '1000 elements with 4 > * + *',
+    url: `file:///${__dirname}/fixtures/1000-elements/four-asteriod.html`
   },
   {
     name: '1000 elements with > .child + .child',
@@ -34,8 +38,12 @@ const cases = [
     url: `file:///${__dirname}/fixtures/10000-elements/asteriod.html`
   },
   {
-    name: '10000 elements with extra > * + *',
+    name: '10000 elements with 2 > * + *',
     url: `file:///${__dirname}/fixtures/10000-elements/two-asteriod.html`
+  },
+  {
+    name: '10000 elements with 4 > * + *',
+    url: `file:///${__dirname}/fixtures/10000-elements/four-asteriod.html`
   },
   {
     name: '10000 elements with > .child + .child',
