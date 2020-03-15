@@ -1,29 +1,49 @@
 const puppeteer = require('puppeteer')
-const times = 100
+const loops = 100
 const fs = require('fs')
 
 let stats = {}
 
 const cases = [
   {
-    name: 'no-css',
-    url: `file:///${__dirname}/fixtures/no-css.html`
+    name: '1000 elements with no-css',
+    url: `file:///${__dirname}/fixtures/1000-elements/no-css.html`
   },
   {
-    name: '> * + *',
-    url: `file:///${__dirname}/fixtures/asteriod.html`
+    name: '1000 elements with > * + *',
+    url: `file:///${__dirname}/fixtures/1000-elements/asteriod.html`
   },
   {
-    name: 'extra > * + *',
-    url: `file:///${__dirname}/fixtures/two-asteriod.html`
+    name: '1000 elements with extra > * + *',
+    url: `file:///${__dirname}/fixtures/1000-elements/two-asteriod.html`
   },
   {
-    name: '> .child + .child',
-    url: `file:///${__dirname}/fixtures/class.html`
+    name: '1000 elements with > .child + .child',
+    url: `file:///${__dirname}/fixtures/1000-elements/class.html`
   },
   {
-    name: '> .child',
-    url: `file:///${__dirname}/fixtures/one-child.html`
+    name: '1000 elements with > .child',
+    url: `file:///${__dirname}/fixtures/1000-elements/one-child.html`
+  },
+  {
+    name: '10000 elements with no-css',
+    url: `file:///${__dirname}/fixtures/10000-elements/no-css.html`
+  },
+  {
+    name: '10000 elements with > * + *',
+    url: `file:///${__dirname}/fixtures/10000-elements/asteriod.html`
+  },
+  {
+    name: '10000 elements with extra > * + *',
+    url: `file:///${__dirname}/fixtures/10000-elements/two-asteriod.html`
+  },
+  {
+    name: '10000 elements with > .child + .child',
+    url: `file:///${__dirname}/fixtures/10000-elements/class.html`
+  },
+  {
+    name: '10000 elements with > .child',
+    url: `file:///${__dirname}/fixtures/10000-elements/one-child.html`
   },
 ]
 
@@ -41,7 +61,7 @@ async function runCase ({name, url}) {
 
 
 async function start () {
-  let count = times
+  let count = loops
   while(count-- > 0) {
     for (let i = 0; i < cases.length; i++) {
       await runCase(cases[i])
@@ -49,15 +69,22 @@ async function start () {
   }
 }
 
+function mapSecToReadableMs (seconds) {
+  return (seconds * 1000)
+    .toLocaleString('en', {minimumFractionDigits: 2, maximumFractionDigits: 2})
+    .padStart(8, ' ') + 'ms'
+}
+
 function logResult () {
   let writeStream = fs.createWriteStream(`results/${new Date().toISOString()}.txt`);
   
+  writeStream.write(`loop ${loops} times \n\n`)
   Object.entries(stats).forEach(([caseName, totalTime]) => {
-    const result = `${totalTime / times} (${caseName})`
+    const result = `${mapSecToReadableMs(totalTime / loops)} - ${caseName}`
     writeStream.write(result + '\n');
     console.log(result)
   })
-  writeStream.close
+  writeStream.close()
 }
 
 Promise.resolve()
