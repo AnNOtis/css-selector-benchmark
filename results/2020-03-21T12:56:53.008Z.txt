@@ -1,0 +1,16 @@
+loop 100 times 
+
+   21.84ms - 1000 elements with no-css
+   25.62ms - 1000 elements with > * + *
+   25.63ms - 1000 elements with 2 > * + *
+   26.68ms - 1000 elements with 4 > * + *
+   26.70ms - 1000 elements with > *:not(:first-child)
+   25.98ms - 1000 elements with > .child + .child
+   24.32ms - 1000 elements with > .child
+  244.35ms - 10000 elements with no-css
+  279.05ms - 10000 elements with > * + *
+  279.28ms - 10000 elements with 2 > * + *
+  286.91ms - 10000 elements with 4 > * + *
+  289.55ms - 10000 elements with > *:not(:first-child)
+  273.91ms - 10000 elements with > .child + .child
+  263.11ms - 10000 elements with > .child

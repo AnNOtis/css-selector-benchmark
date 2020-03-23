@@ -10,6 +10,10 @@ const cases = [
     url: `file:///${__dirname}/fixtures/1000-elements/no-css.html`
   },
   {
+    name: '1000 elements with * + *',
+    url: `file:///${__dirname}/fixtures/1000-elements/global-asteriod.html`
+  },
+  {
     name: '1000 elements with > * + *',
     url: `file:///${__dirname}/fixtures/1000-elements/asteriod.html`
   },
@@ -22,6 +26,10 @@ const cases = [
     url: `file:///${__dirname}/fixtures/1000-elements/four-asteriod.html`
   },
   {
+    name: '1000 elements with > *:not(:first-child)',
+    url: `file:///${__dirname}/fixtures/1000-elements/asteriod-not-first.html`
+  },
+  {
     name: '1000 elements with > .child + .child',
     url: `file:///${__dirname}/fixtures/1000-elements/class.html`
   },
@@ -30,8 +38,16 @@ const cases = [
     url: `file:///${__dirname}/fixtures/1000-elements/one-child.html`
   },
   {
+    name: '1000 elements with > .child & > .child:first-child ',
+    url: `file:///${__dirname}/fixtures/1000-elements/one-child-with-first.html`
+  },
+  {
     name: '10000 elements with no-css',
     url: `file:///${__dirname}/fixtures/10000-elements/no-css.html`
+  },
+  {
+    name: '10000 elements with * + *',
+    url: `file:///${__dirname}/fixtures/10000-elements/global-asteriod.html`
   },
   {
     name: '10000 elements with > * + *',
@@ -46,12 +62,20 @@ const cases = [
     url: `file:///${__dirname}/fixtures/10000-elements/four-asteriod.html`
   },
   {
+    name: '10000 elements with > *:not(:first-child)',
+    url: `file:///${__dirname}/fixtures/10000-elements/asteriod-not-first.html`
+  },
+  {
     name: '10000 elements with > .child + .child',
     url: `file:///${__dirname}/fixtures/10000-elements/class.html`
   },
   {
     name: '10000 elements with > .child',
     url: `file:///${__dirname}/fixtures/10000-elements/one-child.html`
+  },
+  {
+    name: '10000 elements with > .child & > .child:first-child ',
+    url: `file:///${__dirname}/fixtures/10000-elements/one-child-with-first.html`
   },
 ]
 
