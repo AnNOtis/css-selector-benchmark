@@ -2,8 +2,9 @@
 
 ## Device
 
-MacBook Pro (15-inch, 2019)
-CPU: 2.6 GHz Intel Core i7 with 4x slower CPU simulation
+- MacBook Pro (15-inch, 2019)
+- CPU: 2.6 GHz Intel Core i7
+- 4x slower CPU simulation
 
 ## Goal
 
