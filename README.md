@@ -9,6 +9,8 @@ CPU: 2.6 GHz Intel Core i7 with 4x slower CPU simulation
 
 Styling all the children of `#app` but not first one.
 
+You can find different test cases for this goal under [/fixtures](https://github.com/AnNOtis/css-selector-benchmark/tree/master/fixtures) folder.
+
 ## Result
 
 Average of recalculating style times of each case:
@@ -36,6 +38,8 @@ loop 100 times
   256.75ms - 10000 elements with > .child
   272.37ms - 10000 elements with > .child & > .child:first-child 
 ```
+
+You can find more results under [/results](https://github.com/AnNOtis/css-selector-benchmark/tree/master/results) folder.
 
 ## Conclusion
 
