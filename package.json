@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "node benchmark-runner.js"
+  },
   "dependencies": {
     "puppeteer": "^2.1.1"
   }
